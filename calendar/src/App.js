@@ -27,7 +27,7 @@ const GlobalStyled = createGlobalStyle`
     height: 100%;
     margin-right: 50px;
 
-    
+    /* 스크롤 커스텀 */
     overflow-x: hidden;
     overflow-y: auto;
 
