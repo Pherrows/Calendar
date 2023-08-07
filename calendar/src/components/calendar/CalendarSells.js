@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   addDays,
   endOfMonth,
@@ -6,21 +6,14 @@ import {
   format,
   isSameDay,
   isSameMonth,
-  parse,
   startOfMonth,
   startOfWeek,
   parseISO,
 } from "date-fns";
 import styled from "styled-components";
-import CalendarPlanModal from "./CalendarPlanModal";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  addCalendarTitle,
-  deleteCalendarTitle,
-  selectTitle,
-} from "../../features/calendarSlice";
+
 // import { format } from 'date-fns/esm';
-import { BsDot, GoDotFill } from "react-icons/go";
+import { GoDotFill } from "react-icons/go";
 
 const CalendarContainer = styled.div`
   .body {
@@ -122,12 +115,9 @@ function CalendarSells({
   const monthEnd = endOfMonth(monthStart);
   const startDate = startOfWeek(monthStart);
   const endDate = endOfWeek(monthEnd);
-  const selectedTitle = useSelector(selectTitle);
-  const dispatch = useDispatch();
-  const [deletedItems, setDeletedItems] = useState([]);
 
-  const { title = "" } =
-    selectedTitle.find((item) => item.date === selectedDate) || {};
+  // const { title = "" } =
+  //   selectedTitle.find((item) => item.date === selectedDate) || {};
 
   const rows = [];
   let days = [];

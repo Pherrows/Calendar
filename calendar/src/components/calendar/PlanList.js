@@ -1,12 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import {
-  addCalendarTitle,
-  selectTitle,
-  getSelectedPlan,
-  deleteCalendarTitle,
-} from "../../features/calendarSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { getSelectedPlan } from "../../features/calendarSlice";
+import { useDispatch } from "react-redux";
 import { GoDotFill } from "react-icons/go";
 import { MdDeleteForever } from "react-icons/md";
 
@@ -76,8 +71,8 @@ function PlanList({
   handleDelete,
   clickEditModal,
 }) {
-  const selectedTitle = useSelector(selectTitle);
-  const [deletedItems, setDeletedItems] = useState([]);
+  // const selectedTitle = useSelector(selectTitle);
+
   const dispatch = useDispatch();
   const sortedSelectedTitle = filteredSelectedTitle
     .slice()

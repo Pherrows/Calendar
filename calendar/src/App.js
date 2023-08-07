@@ -58,57 +58,14 @@ const Container = styled.div`
   justify-content: center;
 `;
 
-const Wrapper = styled.div`
-  width: 900px;
-  /* height: 850px; */
-`;
-// ddddd
-// const Footer = styled.div`
-//   border-top: 2px solid #f5cc8d;
-//   color: #acacac;
-//   width: 100%;
-//   height: 120px;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   .innerFooter {
-//     width: 900px;
-//     .footerContent {
-//       margin-left: 1%;
-//       .menu {
-//         display: flex;
-//         margin-bottom: 7px;
-//         li {
-//           margin-right: 10px;
-//           a {
-//             color: inherit;
-//             text-decoration: none;
-//           }
-//         }
-//       }
-//       .info {
-//         margin-bottom: 5px;
-//         font-weight: 300;
-//         font-size: 12px;
-//       }
-//       .copyright {
-//         font-size: 12px;
-//       }
-//     }
-//   }
-// `;
-
 function App() {
   return (
     <>
       <GlobalStyled />
       <Container>
-        {/* <Wrapper> */}
         <Routes>
           <Route path="/" element={<Calendar />} />
         </Routes>
-        {/* </Wrapper> */}
       </Container>
     </>
   );

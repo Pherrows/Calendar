@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Placeholder } from "react-bootstrap";
+
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+
 import styled, { keyframes } from "styled-components";
 import {
   addCalendarTitle,
   clearSelectedPlan,
-  deleteCalendarTitle,
   selectSelectedPlan,
-  selectTitle,
   updateCalendarTitle,
-  updatedPlan,
 } from "../../features/calendarSlice";
 import { format } from "date-fns";
 
@@ -117,7 +114,7 @@ const CalendarPlanModal = ({
 }) => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const selectedData = useSelector(selectTitle);
+
   const selectedPlan = useSelector(selectSelectedPlan);
   const dispatch = useDispatch();
 
@@ -125,7 +122,7 @@ const CalendarPlanModal = ({
     return () => {
       dispatch(clearSelectedPlan());
     };
-  }, []);
+  });
 
   useEffect(() => {
     if (selectedPlan) {
@@ -154,12 +151,12 @@ const CalendarPlanModal = ({
     closeModal();
   };
 
-  const handleDelete = () => {
-    if (selectedPlan) {
-      dispatch(deleteCalendarTitle(selectedPlan.id));
-    }
-    closeModal();
-  };
+  // const handleDelete = () => {
+  //   if (selectedPlan) {
+  //     dispatch(deleteCalendarTitle(selectedPlan.id));
+  //   }
+  //   closeModal();
+  // };
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);

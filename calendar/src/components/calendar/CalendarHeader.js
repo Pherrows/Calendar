@@ -5,7 +5,6 @@ import {
 } from "react-icons/bs";
 import { format } from "date-fns";
 import styled from "styled-components";
-import { isSameMonth, isSameDay, addDays, parse } from "date-fns";
 
 const Header = styled.div`
   display: flex;

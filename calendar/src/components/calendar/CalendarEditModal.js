@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Placeholder } from "react-bootstrap";
+
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+
 import styled, { keyframes } from "styled-components";
 import {
   addCalendarTitle,
   clearSelectedPlan,
-  deleteCalendarTitle,
   selectSelectedPlan,
-  selectTitle,
   updateCalendarTitle,
-  updatedPlan,
-  clickEditModal,
 } from "../../features/calendarSlice";
 import { format } from "date-fns";
 
@@ -117,7 +113,7 @@ const CalendarEditModal = ({
 }) => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const selectedData = useSelector(selectTitle);
+
   const selectedPlan = useSelector(selectSelectedPlan);
   const dispatch = useDispatch();
 
@@ -125,7 +121,7 @@ const CalendarEditModal = ({
     return () => {
       dispatch(clearSelectedPlan());
     };
-  }, []);
+  });
 
   useEffect(() => {
     if (selectedPlan) {
@@ -154,12 +150,12 @@ const CalendarEditModal = ({
     closeEditModal();
   };
 
-  const handleDelete = () => {
-    if (selectedPlan) {
-      dispatch(deleteCalendarTitle(selectedPlan.id));
-    }
-    closeEditModal();
-  };
+  // const handleDelete = () => {
+  //   if (selectedPlan) {
+  //     dispatch(deleteCalendarTitle(selectedPlan.id));
+  //   }
+  //   closeEditModal();
+  // };
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
@@ -191,7 +187,6 @@ const CalendarEditModal = ({
         autoFocus
         onKeyUp={handleKeyPress}
         spellCheck={false}
-        // disableds
       />
 
       <DetailInput
