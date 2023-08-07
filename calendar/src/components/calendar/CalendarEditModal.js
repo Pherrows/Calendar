@@ -121,7 +121,7 @@ const CalendarEditModal = ({
     return () => {
       dispatch(clearSelectedPlan());
     };
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (selectedPlan) {

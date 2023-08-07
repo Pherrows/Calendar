@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { addMonths, subMonths, format } from "date-fns";
+import { addMonths, subMonths } from "date-fns";
 import CalendarDay from "../components/calendar/CalendarDay";
 import CalendarSells from "../components/calendar/CalendarSells";
 import CalendarHeader from "../components/calendar/CalendarHeader";
