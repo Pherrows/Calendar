@@ -122,7 +122,7 @@ const CalendarPlanModal = ({
     return () => {
       dispatch(clearSelectedPlan());
     };
-  });
+  }, []);
 
   useEffect(() => {
     if (selectedPlan) {
