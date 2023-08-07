@@ -104,11 +104,11 @@ function App() {
     <>
       <GlobalStyled />
       <Container>
-        <Wrapper>
-          <Routes>
-            <Route path="/" element={<Calendar />} />
-          </Routes>
-        </Wrapper>
+        {/* <Wrapper> */}
+        <Routes>
+          <Route path="/" element={<Calendar />} />
+        </Routes>
+        {/* </Wrapper> */}
       </Container>
     </>
   );

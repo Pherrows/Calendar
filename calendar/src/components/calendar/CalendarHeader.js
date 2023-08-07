@@ -12,8 +12,8 @@ const Header = styled.div`
   justify-content: space-between;
   align-items: center;
   /* border-bottom: 1px solid gray; */
-  margin-top: 100px;
-  width: 80%;
+  margin-top: 60px;
+  width: 70%;
   margin-bottom: 10px;
 `;
 

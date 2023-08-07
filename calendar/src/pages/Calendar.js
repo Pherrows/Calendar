@@ -9,6 +9,28 @@ import PlanList from "../components/calendar/PlanList";
 import { deleteCalendarTitle, selectTitle } from "../features/calendarSlice";
 import { useDispatch, useSelector } from "react-redux";
 import CalendarEditModal from "../components/calendar/CalendarEditModal";
+import styled from "styled-components";
+
+/* 스타일 예시 */
+const Modaloverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Modalcontainer = styled.div`
+  /* background-color: #fff; */
+  /* padding: 20px; */
+  /* border-radius: 5px; */
+  width: 100%;
+  height: 100%;
+`;
 
 function Calendar(props) {
   const [currentMonth, setcurrentMonth] = useState(new Date());
@@ -69,7 +91,7 @@ function Calendar(props) {
 
   return (
     <div className="show-content">
-      <div className="calendar" style={{ marginLeft: "30px" }}>
+      <div className="calendar" style={{ marginLeft: "50px" }}>
         <CalendarHeader
           currentMonth={currentMonth}
           prevMonth={prevMonth}
@@ -93,30 +115,28 @@ function Calendar(props) {
           clickEditModal={clickEditModal}
         />
         {modal && (
-          <div
-            className="modal-container"
-            style={{ position: "absolute", top: "-10%", right: "0%" }}
-          >
-            <CalendarPlanModal
-              closeModal={closeModal}
-              selectedDate={selectedDate}
-              onDateClick={onDateClick}
-            />
-          </div>
+          <Modaloverlay className="modal-overlay">
+            <Modalcontainer className="modal-container">
+              <CalendarPlanModal
+                closeModal={closeModal}
+                selectedDate={selectedDate}
+                onDateClick={onDateClick}
+              />
+            </Modalcontainer>
+          </Modaloverlay>
         )}
         {editModal && (
-          <div
-            className="modal-container"
-            style={{ position: "absolute", top: "-10%", right: "0%" }}
-          >
-            <CalendarEditModal
-              currentMonth={currentMonth}
-              selectedDate={selectedDate}
-              clickEditModal={clickEditModal}
-              onDateClick={onDateClick}
-              closeEditModal={closeEditModal}
-            />
-          </div>
+          <Modaloverlay className="modal-overlay">
+            <Modalcontainer className="modal-container">
+              <CalendarEditModal
+                currentMonth={currentMonth}
+                selectedDate={selectedDate}
+                clickEditModal={clickEditModal}
+                onDateClick={onDateClick}
+                closeEditModal={closeEditModal}
+              />
+            </Modalcontainer>
+          </Modaloverlay>
         )}
       </div>
     </div>

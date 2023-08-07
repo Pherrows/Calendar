@@ -11,25 +11,28 @@ import { GoDotFill } from "react-icons/go";
 import { MdDeleteForever } from "react-icons/md";
 
 const PlanListWrapper = styled.div`
-  /* background-color: orange; */
-  width: 220px;
-  /* height: 300px; */
+  width: 300px;
   position: absolute;
-  top: 150px;
-  right: 350px;
+  top: 50px;
+  right: 250px;
+  /* height: 300px; */
+  /* background-color: orange; */
+  /* display: flex; */
+  /* margin-left: 50px; */
 `;
 
 const ScheduleList = styled.div`
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: 100px;
 `;
 
 const StyledPlanList = styled.div`
   width: 150%;
-  /* height: 20px; */
+  height: 40px;
   margin-left: 20px;
   margin-top: 20px;
   border-radius: 6px;
@@ -46,13 +49,13 @@ const StyledPlanList = styled.div`
 `;
 
 const StyledTitle = styled.div`
-  width: 60%;
+  width: 65%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-left: 5px;
+  margin-left: 10px;
   font-weight: 600;
-  font-size: 11px;
+  font-size: 15px;
   padding-top: 3px;
 `;
 
@@ -61,7 +64,7 @@ const SelectedDate = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  font-size: 10px;
+  font-size: 14px;
 `;
 
 function PlanList({
@@ -96,7 +99,11 @@ function PlanList({
               onClick={() => handleClickPlan(item.id)}
               key={index}
             >
-              <GoDotFill color="#5CE1E6" size={15} />
+              <GoDotFill
+                color="#5CE1E6"
+                size={15}
+                style={{ marginLeft: "5px" }}
+              />
               <StyledTitle>{item.title}</StyledTitle>
               <SelectedDate>{item.date}</SelectedDate>
               <MdDeleteForever

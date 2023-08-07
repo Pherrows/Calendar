@@ -37,7 +37,7 @@ const CalendarContainer = styled.div`
     align-items: center;
     margin-bottom: 10px;
     margin-top: 5px;
-    width: 100%;
+    width: 70%;
     /* margin-left: 200px; */
   }
 
@@ -47,7 +47,7 @@ const CalendarContainer = styled.div`
     justify-content: flex-start;
     align-items: flex-start;
     width: 200px;
-    height: 100px;
+    height: 120px;
     padding-left: 1%;
     background: rgb(239, 239, 239);
     border-radius: 6px;
@@ -83,19 +83,20 @@ const CalendarContainer = styled.div`
     span {
       margin-left: 3px;
       margin-top: 2px;
+      font-size: 16px;
     }
   }
 `;
 
 const SellInTitle = styled.div`
-  width: 50px;
+  width: 100px;
   /* background-color: #f5cc8d; */
-  margin-top: 5px;
-  margin-left: 2px;
+  margin-top: 10px;
+  margin-left: 10px;
   display: flex;
   justify-content: start;
   align-items: center;
-  font-size: 1px;
+  font-size: 3px;
   font-weight: 500;
 
   .title {
@@ -103,9 +104,10 @@ const SellInTitle = styled.div`
     overflow: hidden;
     text-overflow: ellipsis;
     margin-left: 2px;
-    font-size: 13px;
-    width: 50px;
+    font-size: 14px;
+    width: 80px;
     padding: 2px;
+    font-weight: 400;
   }
 `;
 
