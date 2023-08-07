@@ -12,7 +12,7 @@ import CalendarEditModal from "../components/calendar/CalendarEditModal";
 import styled from "styled-components";
 
 /* 스타일 예시 */
-const Modaloverlay = styled.div`
+const ModalOverlay = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -24,7 +24,7 @@ const Modaloverlay = styled.div`
   align-items: center;
 `;
 
-const Modalcontainer = styled.div`
+const ModalContainer = styled.div`
   /* background-color: #fff; */
   /* padding: 20px; */
   /* border-radius: 5px; */
@@ -33,7 +33,7 @@ const Modalcontainer = styled.div`
 `;
 
 function Calendar(props) {
-  const [currentMonth, setcurrentMonth] = useState(new Date());
+  const [currentMonth, setCurrentMonth] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [modal, setModal] = useState(false);
   const [editModal, setEditModal] = useState(false);
@@ -78,11 +78,11 @@ function Calendar(props) {
   };
 
   const prevMonth = () => {
-    setcurrentMonth(subMonths(currentMonth, 1));
+    setCurrentMonth(subMonths(currentMonth, 1));
   };
 
   const nextMonth = () => {
-    setcurrentMonth(addMonths(currentMonth, 1));
+    setCurrentMonth(addMonths(currentMonth, 1));
   };
 
   const onDateClick = (day) => {
@@ -115,19 +115,19 @@ function Calendar(props) {
           clickEditModal={clickEditModal}
         />
         {modal && (
-          <Modaloverlay className="modal-overlay">
-            <Modalcontainer className="modal-container">
+          <ModalOverlay className="modal-overlay">
+            <ModalContainer className="modal-container">
               <CalendarPlanModal
                 closeModal={closeModal}
                 selectedDate={selectedDate}
                 onDateClick={onDateClick}
               />
-            </Modalcontainer>
-          </Modaloverlay>
+            </ModalContainer>
+          </ModalOverlay>
         )}
         {editModal && (
-          <Modaloverlay className="modal-overlay">
-            <Modalcontainer className="modal-container">
+          <ModalOverlay className="modal-overlay">
+            <ModalContainer className="modal-container">
               <CalendarEditModal
                 currentMonth={currentMonth}
                 selectedDate={selectedDate}
@@ -135,8 +135,8 @@ function Calendar(props) {
                 onDateClick={onDateClick}
                 closeEditModal={closeEditModal}
               />
-            </Modalcontainer>
-          </Modaloverlay>
+            </ModalContainer>
+          </ModalOverlay>
         )}
       </div>
     </div>

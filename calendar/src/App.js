@@ -13,7 +13,6 @@ const GlobalStyled = createGlobalStyle`
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    font-family: 'GmarketSansMedium';
     /* background-color: #e9ecef; */
   }
   
