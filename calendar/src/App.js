@@ -9,7 +9,6 @@ const GlobalStyled = createGlobalStyle`
   ${reset}
   
   body {
-    /* margin-top: 100px; */
     width: 100%;
     height: 100%;
     box-sizing: border-box;
